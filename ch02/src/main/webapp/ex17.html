@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<style>
+/* 초기화 후 시작*/
+* { margin:0; padding:0}
+body {
+	font-family: "맑은 고딕", 돋움;
+	font-size: 12px;
+}
+form {
+	width: 180px;
+	border: 1px solid #555;
+	padding: 10px;
+	margin: 100px auto 0px auto
+}
+input {
+	/* 인라인을 block 레벨로 바꾸기*/
+	display: block;
+	padding: 5px;
+	outline: none;
+	background-color: #fff;
+	border: 2px solid #aaa;
+}
+/* input중에 속성 선택자*/
+input[type='password'] {
+	margin-top: 10px;
+}
+input[type='text'].focused {
+	border-color: #2a00e6;
+	background-color: #e1e6f6;
+}
+</style>
+<script>
+	function focused(element) {
+					/* this: 함수 호출
+					"focused: "+ this하면 focused: [object Window]
+					onfocus에서 focused(this) 하면 focused: [object HTMLInputElement]
+					*/
+		console.log("focused: "+ element);
+		element.className = "focused";
+	}
+	function blured(element){
+		element.className = '';
+	}
+</script>
+<body>
+	<form>
+		<input 
+			onfocus='focused(this)'
+			onblur='blured(this)'
+			type="text" value="" placeholder="이메일">
+		<input type="password" value="" placeholder="비밀번호">
+	</form>
+</body>
+</html>
