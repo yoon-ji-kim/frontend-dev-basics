@@ -15,11 +15,10 @@ body {
 	width: 630px;
 	height: 100px;
 	margin: 50px auto;
-	
-	background-color: #ddd;
 }
 .header .logo, .header .search-box {
 	float: left;
+	margin: 10px;
 } 
 .header .logo {
 	width: 222px;
@@ -28,9 +27,58 @@ body {
 	overflow: hidden;
 	background: url('/ch03/images/n-sprite.png') no-repeat 0 -158px / 442px 428px;
 }
-
+.search-box {
+	background-color: #fff;
+	height: 52px;
+	width: 364px;
+	border:2px solid #19CE60;
+}
 .search-box a, .search-box input, .search-box .btn-search button {
 	display: block;
+	float: right;
+}
+.btn-search {
+	float: right;
+	width: 30px;
+	height: 52px;
+	background-color: #19CE60;
+}
+.btn-search button {
+	width: 30px;
+	height: 25px;
+	font-size: 0;
+	overflow: hidden;
+	background: url('/ch03/images/n-sprite.png') no-repeat -416px -24px / 442px 428px;
+	border:0;
+	margin-top: 10px;
+}
+.search-box a:nth-of-type(1) {
+	width: 10px;
+	height: 10px;
+	overflow: hidden;
+	font-size: 0;
+	background: url('/ch03/images/n-sprite.png') no-repeat -158px -149px / 442px 428px;
+	margin: 20px 10px 0px 0px;
+}
+.search-box a:nth-of-type(2) {
+	width: 20px;
+	height: 15px;
+	font-size: 0;
+	overflow: hidden;
+	background: url('/ch03/images/n-sprite.png') no-repeat -398px -267px / 442px 428px;
+	margin: 20px 10px 0px 0px;;
+}
+
+input {
+	width: 250px;
+	height: 36px;
+	border: 0;
+	background-color: #fff;
+	margin: 7px;
+	font-size: 16px;
+}
+input:focus {
+	outline: none;
 }
 </style>
 </head>
@@ -42,7 +90,7 @@ body {
 				<button>검색</button>
 			</div>
 			<!-- 눌렀을때 링크 -->
-			<a href="#">드롭다운 ▼</a>
+			<a href="#">▼</a>
 			<a href="#">키보드</a>
 			<input type="text" /> 
 		</div>
