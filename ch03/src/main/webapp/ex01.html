@@ -1,0 +1,94 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>마진과 패딩</title>
+<style type="text/css">
+* {
+	margin:0;
+	padding:0;
+}
+body {
+	font-family: "돋움", "맑은 고딕";
+	font-size: 0.8em;
+	color: #333;
+}
+
+.box1 {
+	border: 1px solid #666;
+	width: 300px;
+	background-color: #FFC;
+	
+	padding-top: 10px;
+	padding-right: 10px;
+	padding-bottom: 30px;
+	padding-left: 30px;
+			/*top right bottom left 순 */
+	padding: 10px 20px 30px 40px; 
+	padding: 10px 20px 30px; /*T (R,L) B */
+	padding: 10px 20px; /*(T,B) (R,L) */
+	
+	margin-top: 10px;
+	margin-right: 20px;
+	margin-bottom: 30px;
+	margin-left: 40px;
+	
+	margin: 100px; /*(T,R,B,L)*/
+	margin: 100px auto; /*(T,B) (R,L) auto: 전체 브라우저 크기와 박스의 width가 있다면 구해서 1/2*/
+	margin: 100px auto 300px auto; /* T R B L */
+}
+</style>
+<script>
+	/* 타입은 실행하면서 결정 */
+	// elDiv = document.getElementById("myBox") /* id로 element 찾기*/
+	//window.onload /*on~: 함수 객체 세팅*/
+	//console.log(elDiv);
+	/* 
+	i = "dfdfdf";
+	f= function () { // 함수 = 객체, 함수 정의
+		console.log("!!!!");
+	}
+	window.onload = f(); //함수 호출
+	*/
+	//i = 10;
+	//sum(10)
+	//f = function() {
+	//	console.log("time out");
+	//}
+	window.onload = function() {
+		elDiv = document.getElementById("myBox");
+		// console.log(elDiv);
+		elDiv.onclick = function () {
+			//i=0;
+			//현재 마진값 구하기
+			marginTop = parseInt(this.style.marginTop); 
+			intervalId = setInterval(function() {
+				/*
+				if(i > 4) {
+					clearInterval(intervalId); //타이머 끝
+					return;
+				}
+				console.log("time out");
+				i++;
+				*/
+				if(marginTop <= -80){
+					clearInterval(intervalId); //타이머 끝
+					return;
+				}
+				marginTop -= 10;
+				elDiv.style.marginTop = marginTop + "px";
+			}, 10);
+			//setTimeout(function() {
+			//	console.log("time out");
+			//}, 1000); //1초 후 함수 실행
+			//console.log("!!!");
+		}
+	}
+</script>
+</head>
+<body>
+	<div id="myBox" class="box1" style="margin-top:100px">
+		CSS에서 가장 보편적이고 많이 사용하는 마진과 패딩에 대한 값이 어떻게 적용되는지 확인해 보겠습니다.
+	</div>
+</body>
+</html>
