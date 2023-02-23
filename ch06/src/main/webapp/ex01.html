@@ -12,6 +12,17 @@ console.log(window.email, email);
 setTimeout(function() {
 	/* 자식창에 대한 윈도우 객체 */
 	var child = window.open("popup.html" , "n-popup", "width=600, height=400");
+	
+	setTimeout(function() {
+		//자식창의 내용 바꾸기
+	    //DOM에 접근 DOM API- write()
+		child.document.write("<h1>popup contents changed!</h1>");
+	}, 2000);
+	
+	setTimeout(function() {
+		//자식창 움직이기
+		child.moveTo(200, 200);
+	}, 2000);
 }, 2000);
 </script>
 </head>

@@ -3,6 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script>
+window.onload = function() {
+	setTimeout(function() {
+		//JS Engine안에서 객체가 만들어짐,Element가 참조, DOM에 붙이는 작업 필요
+		var h3Element = document.createElement("h3");
+		//자식 textNode가 하나 있어야함
+		var h3TextNode = document.createTextNode('Hello DOM');
+		//자식을 붙이는 작업
+		h3Element.append(h3TextNode);
+		//h3Element를 body에 붙이기
+		document.body.appendChild(h3Element);
+	}, 2000);
+}
+</script>
 </head>
 <body>
 	<h1>DOM(Document Object Model)</h1>

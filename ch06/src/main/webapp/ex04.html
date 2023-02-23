@@ -3,6 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<!-- 외부 js 사용 -->
+<script src='browser-detect.js' ></script>
+<script>
+console.log(navigator.userAgent);
+console.log(navigator.platform);
+
+BrowserDetect.init();
+console.log(BrowserDetect.browser, BrowserDetect.version, BrowserDetect.OS);
+</script>
 </head>
 <body>
 	<h1>BOM(Browser Object Model)</h1>
