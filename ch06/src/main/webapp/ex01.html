@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+<script>
+window.n = '둘리';
+console.log(window.n, n);
+
+var email = 'dooly@gmail.com';
+console.log(window.email, email);
+
+setTimeout(function() {
+	/* 자식창에 대한 윈도우 객체 */
+	var child = window.open("popup.html" , "n-popup", "width=600, height=400");
+}, 2000);
+</script>
+</head>
+<body>
+<body>
+	<h1>BOM(Browser Object Model)</h1>
+	<h2>1. window 전역 객체(Global Object)</h2>
+	<ul>
+		<li>자바스크립트가 브라우저 창(window)을 제어하기 위한 객체</li>
+		<li>자바스크립트 실행과 관련된 환경 정보에 접근이 가능한 객체(Environments, Variable Object)</li>		
+	</ul>
+</body>
+</body>
+</html> 
