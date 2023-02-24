@@ -4,16 +4,18 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script type="text/javascript" src="jquery/jquery-3.6.0.js"></script>
 <script>
-$(function() {
-	var $obj = $(".par");
-	$obj.click(function(){
-		console.log("clicked:" + this);
+	//$(function() {			//window onload 대신 쓸 수 있는 
+	window.addEventListener('load', function(){
+		var $obj = $(".par");
+		
+		$obj.click(function(){
+			console.log("clicked:" + this);	//this는 이벤트를 일으키는 element
+		});
+		
+		setTimeout(function(){
+			$obj.css('color', 'red');
+		}, 2000);
 	});
-	
-	setTimeout(function(){
-		$obj.css('color', 'red');
-	}, 2000);
-});
 </script>
 </head>
 <body>

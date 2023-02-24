@@ -6,6 +6,13 @@
 <link rel="stylesheet" type="text/css" href="/ch05/css/tabbox.css"></link>
 </head>
 <script>
+	var onTabClicked = function() {
+		// console.log(this); //이벤트 함수 안에서 this는 이벤트가 일어난 element
+		var liSelected = document.querySelector('li.selected');
+		//console.log(liSelected);
+		liSelected && (liSelected.className = '');
+		this.className = "selected";
+	}
 	window.addEventListener('load', function() {
 		// 순회			전체 DOM에서 찾기
 		var divTabBox = document.getElementsByClassName('tab-box')[0];
@@ -18,9 +25,7 @@
 		//console.log(lis.forEach); //배열처럼 보이지만 forEach문 못쓰는 유사배열
 		Array.prototype.forEach.call(lis, function(li) {
 									//this를 lis로
-			li.addEventListener('click', function() {
-				console.log('click');
-			})
+			li.addEventListener('click', onTabClicked);
 		});
 		
 	});

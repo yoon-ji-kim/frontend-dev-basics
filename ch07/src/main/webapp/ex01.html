@@ -2,8 +2,41 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- 소스버전(애플리케이션 서버 호스팅) -->
+<!--<script src='/ch07/jquery/jquery-3.6.3.js'></script>  -->
+
+<!-- 압축버전(애플리케이션 서버 호스팅) -->
+<!-- <script src='/ch07/jquery/jquery-3.6.3.min.js'></script>  -->
+
+<!-- 소스버전(CDN호스팅) -->
+<!-- <script src='https://code.jquery.com/jquery-3.6.3.js'></script>  -->
+
+<!-- 압축버전(CDN호스팅) -->
+<script src='https://code.jquery.com/jquery-3.6.3.min.js'></script>
+<script>
+	//버전 확인 방법
+	console.log(jQuery().jquery);
+	//jQuery Object
+	//jQuery함수에서 리턴해준 object를 구분하기 위해 $붙임
+	//var $obj = jQuery();	
+	//console.log(typeof(jQuery));		//function
+	//console.log(typeof($obj));			//object
+	//console.log($obj instanceof Array);	//false
+	
+	
+	window.addEventListener('load', function() {
+		setTimeout(function() {
+			var $obj = jQuery('h1');
+			$obj.css('color', 'red');			//jQuery API: css
+			
+			console.log("length: "+ $obj.length);	//2
+			console.log($obj instanceof Object);	//true
+		}, 1000);
+	});
+</script>
 </head>
 <body>
+	<h1>jQuery 로딩</h1>
 	<h1>jQuery 로딩</h1>
 </body>
 </html>
