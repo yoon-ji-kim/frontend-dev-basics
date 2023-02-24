@@ -3,11 +3,71 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script>
+	/*
+		[DOM Event 종류]
+		1. 마우스
+			- mouseover, mouseout
+			- mousedown -> mouseup -> click ... mousedown -> mouseup -> click-> dbclick
+		2. 키보드
+			- keydown -> keyup -> keypress
+		3. form tage
+			- submit 
+		4. input 
+			- focus, blur, change
+		5. touch(mobile)
+		
+		[DOM Event 용어 정리]
+		1. Event Name: 소문자로 작성
+		 	- load, click, mousedown, ... 등등
+		2. Event Attribute
+			- DOM Event Model Level0: 속성으로 이벤트를 사용하는 것
+			- onload, onclick, onmouseover
+		3. Event Listener
+			- DOM Event Model Level2
+			- 핸들러를 callback function으로 달아줌
+		4. DOM Event Model
+			- DOM HTML Element의 Event Handler를 설정하는 방법에 대한 표준
+			- DOM Event Model Level 0
+				1) inline 방식 : 태그에 속성 붙이기 <h3 id='header-2' onclick=''>
+					- 태그 안에 Event Attribute (on~='', ex) onclick='')에 자바스크립트 코드를 설정하는 방식
+					- <h1 onclick='js codes...'>
+					- 웹 표준에 위배!
+				2) basic
+					- 고전적인 이벤트 처리 방식(기본 이벤트 처리 방식)
+					- element.onclici = function() {...}
+					- 단, 이벤트 핸들러를 하나만 등록할 수 있다 *
+			- DOM Event Model Level 2
+				1) Observer 패턴을 적용해서 Listener(함수, 이벤트 핸들러)를 등록하는 방식
+				2) 다중 event handler를 등록 할 수 있다.
+				3) HTMLElement 객체가 이벤트 핸들러를 등록/제거할 수 있는 함수(DOM API)를 제공하여야 한다.
+					MSIE(<=) : attachEvent/detachEvent
+					표준브라우저 : addEventListener/removeEventListener
+	*/
+	//window.addEventListener : register observer
+	//window.addEventListener("load", function(){})
+	window.addEventListener("load", function() { //DOM Load 시
+		//event 콜백
+		//console.log("1");
+		document
+			.getElementById("header-2")
+			.onclick = function() {
+				console.log("Event Model Lv.0: Base 방식");
+		};
+		
+		document
+			.getElementById("header-3")
+			.addEventListener('click', function() {
+				console.log("Event Model Lv.2")
+			});
+	});
+</script>
 </head>
 <body>
 	<h1>DOM(Document Object Model)</h1>
 	<h2>5. Event 처리</h2>
-	<h3>Event Model Level0 - Inline</h3>
+	<!-- inline 방식 -->
+	<h3 onclick='console.log("Event Model Lv.0: inline 방식")'>Event Model Level0 - Inline</h3>
 	<h3 id='header-2'>Event Model Level0 - Basic</h3>
 	<h3 id='header-3'>Event Model Level2</h3>
 </body>

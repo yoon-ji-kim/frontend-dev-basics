@@ -3,6 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script>
+	window.onload = function() {
+		setTimeout(function() {
+			var imgElement = document.createElement('img');
+			//attribute: 태그에서 지원하는 것
+			imgElement.src = 'http://thumbnail.10x10.co.kr/webimage/image/basic600/262/B002626948.jpg?cmd=thumb&w=400&h=400&fit=true&ws=false';
+			imgElement.style.width = "200px";
+			imgElement.alt = '미니언즈'; //이미지 대체 텍스트
+			imgElement.title = '미니언즈'; //말풍선
+			//property: 태그에서 지원하지 않는 그 외
+			//element에 있어서 접근 시 값을 가져올 수 있음, 숨길 데이터 있을 때 사용 
+			imgElement['data-no'] = 18;
+			document.body.appendChild(imgElement);
+		}, 2000);
+	}
+</script>
 </head>
 <body>
 	<h1 id='h' data-no='10'>DOM(Document Object Model)</h1>

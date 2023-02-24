@@ -3,6 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script>
+/*
+ * 	기본 이벤트 동작 막기
+ 	1. anchor: 버튼이나 메뉴로 사용할 때 **
+ 	2. form: validation, ajax 방식의 submit
+ */
+	window.addEventListener("load", function() {
+		document
+			.getElementById('btn-delete')
+			.addEventListener('click', function(event){
+				event.preventDefault(); 	//페이지 이동X
+				console.log('비밀번호 입력 팝업 띄우기');
+		});
+	})
+</script>
 </head>
 <body>
 	<h1>DOM(Document Object Model)</h1>

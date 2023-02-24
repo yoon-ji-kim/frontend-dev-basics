@@ -3,6 +3,54 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script>
+	//크로스 브라우징
+	var registerEventHandler = function(element, eventName, eventHandler){
+		/*
+		if(!element){ 		//null = false
+			return;
+		}
+		//등록 작업
+		if(element.attachEvent){ //<= IE8
+			element.attachEvent(eventName, eventHandler);
+		} else{					 //표준브라우저
+			element.addEventListener(eventName, eventHandler);
+		}
+		*/
+		//구문을 표현식으로 바꾸기
+		element &&										//element가 null이 아니면서
+		element.attachEvent &&							// IE <=8 이면
+		element.attachEvent(eventName, eventHandler);	// 실행
+		
+		element &&										//element가 null이 아니면서
+		element.addEventListener&&						// 표준브라우저 이면
+		element.addEventListener(eventName, eventHandler);
+		
+	}
+	var clickEventHandler1 = function() {
+		console.log('click1');
+	}
+	var clickEventHandler2 = function() {
+		console.log('click2');
+	}
+	var clickEventHandler3 = function() {
+		console.log('click3');
+	}
+	window.addEventListener("load", function() { 
+		var el = document.getElementById('header');
+		//다중 이벤트 핸들러 등록
+		/*
+		el.addEventListener("click", clickEventHandler1);
+		el.addEventListener("click", clickEventHandler2);
+		
+		//DOM Event Level 0 
+		el.onclick = clickEventHandler3;
+		
+		//제거
+		el.removeEventListener('click', clickEventHandler2);
+		*/
+	});
+</script>
 </head>
 <body>
 	<h1>DOM(Document Object Model)</h1>

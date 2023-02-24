@@ -66,7 +66,7 @@ var sum = function() {
     //     sum += e;
     // })
     //forEach에서 this를 argumnents로 만들기
-    //call메소드를 통해 caller 지정(this가 될 것, )
+    //call메소드 caller this 바꾸기(this가 될 것, )
     Array.prototype.forEach.call(arguments, function(e){
         sum += e;
     })
