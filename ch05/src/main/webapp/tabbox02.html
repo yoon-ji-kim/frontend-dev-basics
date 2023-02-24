@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>리스트를 이용한 메뉴 만들기</title>
+<link rel="stylesheet" type="text/css" href="/ch05/css/tabbox.css"></link>
+</head>
+<script>
+	window.addEventListener('load', function() {
+		// 순회			전체 DOM에서 찾기
+		var divTabBox = document.getElementsByClassName('tab-box')[0];
+		// console.log(divTabBox.childNodes[1]); // ul
+		var ul = divTabBox.childNodes[1];
+		//			자식에서 찾기
+		var lis = ul.getElementsByTagName('li');
+		
+		//순회를 통해 클릭 이벤트 주기
+		//console.log(lis.forEach); //배열처럼 보이지만 forEach문 못쓰는 유사배열
+		Array.prototype.forEach.call(lis, function(li) {
+									//this를 lis로
+			li.addEventListener('click', function() {
+				console.log('click');
+			})
+		});
+		
+	});
+</script>
+<body>
+<div class="tab-box">
+	<ul>
+        <li>메뉴 5</li>
+        <li>메뉴 4</li>
+        <li>메뉴 3</li>
+        <li>메뉴 2</li>
+        <li>메뉴 1</li>
+    </ul>
+    <div>
+    	탭뷰입니다.
+    </div>
+</div>    
+</body>
+</html>

@@ -3,6 +3,45 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script>
+/*
+ * 	 Event Propagation(Event Bubbling)
+ * 		- 어떤 element에 특정 event가 발생했을 때, 그 event가 상위/하위 element로 전파되어 가는 것
+ 		브라우저가 <= IE8에서는 바닥에서부터 효과가 올라옴: Bubbling
+ 			outer-div > inner-div > header > text
+ 		표준브라우저: Propagation
+ 			text > header > inner-div > outer-div
+ */
+ 
+	window.addEventListener('load', function() {
+		document
+			.getElementById('outer-div')
+			.addEventListener('click', function() {
+				console.log('outer-div');
+			});
+		document
+		.getElementById('inner-div')
+		.addEventListener('click', function(event) {
+			//			표준 || <=IE8 일 경우
+			var event = event || window.event;
+			// IE8일 경우 Bubbling 막기
+			event.cancelBubbling = true;
+			//propagetion 막기
+			event.stopPropagation();
+			console.log('inner-div');
+		});
+		document
+		.getElementById('header')
+		.addEventListener('click', function() {
+			console.log('header');
+		});
+		document
+		.getElementById('text')
+		.addEventListener('click', function() {
+			console.log('text');
+		});
+	})
+</script>
 </head>
 <body>
 	<h1>DOM(Document Object Model)</h1>
