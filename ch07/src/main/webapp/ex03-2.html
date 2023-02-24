@@ -4,11 +4,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script type="text/javascript" src="jquery/jquery-simple.js"></script>
 <script>
-	window.addEventListener('load', function(){
+	$(function(){
 		var $obj = $(".par");
+		console.log(typeof(jQuery));		//function
+		console.log(typeof($obj));			//object
+		console.log($obj instanceof Array);	//false
 		
 		$obj.click(function(){
-			console.log("clicked:" + this);	//this는 이벤트를 일으키는 element
+			console.log("clicked:" + this);
 		});
 		
 		setTimeout(function(){
