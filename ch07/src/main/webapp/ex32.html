@@ -6,6 +6,27 @@
 <script type="text/javascript">
 $(function() {
 	setTimeout(function(){
+		//$("h2 a").attr("href", "https://www.douzone.com");
+		//$("h2 a").attr("target", "_blank");
+		//$("h2 a").attr("title", "회사홈페이지 링크");
+		//$("h2 a").css("font-size", "0.75em");
+		
+		
+		//함수 체인
+		//$("h2 a")
+		//	.attr("href", "https://www.douzone.com")
+		//	.attr("target", "_blank")
+		//	.attr("title", "회사홈페이지 링크")
+		//	.css("font-size", "0.75em");
+		
+		$("h2 a")
+			.attr({
+				href : "https://www.douzone.com",
+				target: "_blank",
+				title: "회사홈페이지 링크"
+			})
+			.css("font-size", "0.75em");
+	
 	}, 2000);
 });  
 </script>

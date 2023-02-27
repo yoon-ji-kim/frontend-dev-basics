@@ -4,15 +4,29 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script type="text/javascript" src="./jquery/jquery-3.6.0.js"></script>
 <script type="text/javascript">
-/* jquery plug in */
+
 $(function() {
-	$('h1').flash();
-	$("#btn").click(function(){
-		$(this)
-			.hello()
-			.flash();
-	});
+	$('h1').hello();
+	$('#btn').click(function() {
+		$(this).flash();
+	})
 });  
+/* jquery plug in */
+// simple jQuery: jQuery.prototype.hello = function() {}
+// jQuery.fn.hello = function() {}
+$.fn.hello = function() {
+	console.log('hello world', this.length);
+	//규칙! return!
+	return this;
+}
+$.fn.flash = function() {
+	var _this = this; //클로저: setInterval 후 함수 종료하면 사라지고 setInterval에서 사라지지 않고 살아있음 
+	var isBlink = false;
+	setInterval(function(){				//t/f    
+		_this.css('background-color', isBlink ? '#f00' : '#fff');
+	isBlink = !isBlink;
+	}, 500);
+}
 </script>
 </head>
 <body>
