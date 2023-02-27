@@ -6,6 +6,9 @@
 <script>
 $(function(){
 	setTimeout(function(){
+		//자식 선택자
+		$("li > strong").css("font-weight", "normal");
+		$("li > div > strong").css("color", "blue");
 	}, 1000);
 });
 </script>

@@ -5,7 +5,15 @@
 <script type="text/javascript" src="jquery/jquery-3.6.0.js"></script>
 <script>
 $(function(){
-	setTimeout(function(){	
+	setTimeout(function(){
+		//클래스 red 밑의 strong 태그           chain
+		$(".red strong").css("color", "red").css("font-weight", "normal");
+		//css 속성 여러개 적용 시 json 객체 활용
+		$(".blue strong").css({
+			color: "blue",
+			fontWeight: "normal"
+//			"font-weight": "nomal"
+		});
 	}, 1000);
 });
 </script>

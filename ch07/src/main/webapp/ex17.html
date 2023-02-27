@@ -6,6 +6,12 @@
 <script>
 $(function(){
 	setTimeout(function(){
+		$("#p1").text("1. 안녕하세요");
+		//태그가 아닌 문자로 들어감
+		$("#p2").text("<strong>2. 안녕하세요</strong>");
+		console.log($("#p3").text());
+		console.log($("#p4").text());
+		
 	}, 1000);
 });
 </script>
@@ -21,7 +27,7 @@ $(function(){
 		HTML의 escape 문자들
 		& -> &amp;
 		space -> &nbsp;
-		< -> &lth;
+		< -> &lt;
 		> -> &gt;
 		' -> &quot;
 	-->

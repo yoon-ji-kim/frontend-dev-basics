@@ -6,6 +6,9 @@
 <script>
 $(function(){
 	setTimeout(function(){
+			$('li:contains("샘플")').css("color","red");
+			//자식에 strong 가진 li
+			$('li:has("strong")').css("color","blue");
 	}, 1000);
 });
 </script>
