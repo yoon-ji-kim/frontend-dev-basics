@@ -61,6 +61,7 @@ public class WebConfig implements WebMvcConfigurer{
 		public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
 			converters.add(stringHttpMessageConverter());
 			converters.add(mappingJackson2HttpMessageConverter());
+			//xml을 어노테이션으로 구분할 수 있어야함
 		}
 
 		@Override
