@@ -11,13 +11,23 @@ public class XmlResult {
 	public String getResult() {
 		return result;
 	}
-	public Object getData() {
+	public GuestbookVo getData() {
 		return data;
 	}
 	public String getMessage() {
 		return message;
 	}
-
+	public void setResult(String result) {
+		this.result = result;
+	}
+	public void setData(GuestbookVo data) {
+		this.data = data;
+	}
+	public void setMessage(String message) {
+		this.message = message;
+	}
+	
+	public XmlResult() {}
 	private XmlResult(GuestbookVo data) {
 		this.result = "success";
 		this.data = data;

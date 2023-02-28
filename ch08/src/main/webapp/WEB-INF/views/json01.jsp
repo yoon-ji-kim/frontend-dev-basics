@@ -14,7 +14,7 @@
 			//option 항목 객체로 보내기
 			$.ajax({
 //				url: "http://localhost:8080/ch08/api/json",
-				url: "/ch08/api/json",
+				url: "${pageContext.request.contextPath}/api/json",
 				async: true,		//defaul true 비동기
 				type: "get",
 				dataType: "json",	//받는 타입, contentsType: 보내는 타입
