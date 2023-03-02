@@ -21,7 +21,7 @@
 			$.ajax({
 				url: "${pageContext.request.contextPath}/api/user",
 				type: "post",
-				dataType: "json",
+				dataType: "json",		//dataType: 받는 타입, contentsType: 보내는 타입
 				contentType: "application/json",
 				data: JSON.stringify(vo),
 				success: function(response) {
