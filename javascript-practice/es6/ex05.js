@@ -43,3 +43,21 @@ console.log('\n---------\n');
         process.stdout.write(`${e}: ${(x => x*x)(e)} \t`)
     }
 });
+
+//예제 04 :this를 어휘적으로 바인딩(Lexical Bind)
+console.log('\n---------\n');
+const dooly = {
+    name: '둘리',
+    friends: ['또치', '마이콜', '도우너', '길동'],
+    printFriends: function() {
+        //console.log(this); //this는 dooly
+        //this.friends.forEach(function(f){
+        //    //console.log(this); //this는 global
+        //    console.log(`${this.name}의 친구 ${f}`);
+        //})
+        //화살표 함수로 하면 this는 dooly
+        this.friends.forEach(f => console.log(`${this.name}의 친구 ${f}`));
+    }
+};
+
+dooly.printFriends();
